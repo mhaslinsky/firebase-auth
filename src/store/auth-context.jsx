@@ -51,6 +51,7 @@ export function AuthContextProvider({ children }) {
   function logoutHandler() {
     setToken(null);
     localStorage.removeItem("token");
+    localStorage.removeItem("expirationTime");
     if (logoutTimer) {
       clearTimeout(logoutTimer);
     }
